@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Play</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>body{font-family:system-ui;background:#fef1f6;margin:0;padding:24px} .box{max-width:720px;margin:0 auto;background:white;border-radius:16px;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.08)} .pill{display:inline-block;padding:6px 10px;background:#ffe6f2;border-radius:999px;margin:4px 6px}</style>
+</head>
+<body>
+  <div class="box">
+    <h2>Room: {{ code }}</h2>
+    <p>Players:</p>
+    <div>
+      {% for p in players %}
+        <span class="pill">👤 {{ p }}</span>
+      {% endfor %}
+      {% if players | length == 0 %}<em>No players yet</em>{% endif %}
+    </div>
+    <hr>
+    <p>{{ question_placeholder }}</p>
+    <p><a href="/result/{{ code }}">See Result →</a></p>
+    <p><a href="/">← Home</a></p>
+  </div>
+</body>
+</html>
